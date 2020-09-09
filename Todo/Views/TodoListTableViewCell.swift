@@ -28,8 +28,4 @@ class TodoListTableViewCell: UITableViewCell {
     func configureCell(title: String) {
         self.titleLabelOutLet.text = title
     }
-    
-    func configureCellForDetails(title: String) {
-        self.detailsLabel.text = title
-    }
 }
