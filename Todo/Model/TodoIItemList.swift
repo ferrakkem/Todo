@@ -12,7 +12,6 @@ import RealmSwift
 class TodoIItemList: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var completed: Bool = false
-    @objc dynamic var isExpandable: Bool = false
 }
 
 
