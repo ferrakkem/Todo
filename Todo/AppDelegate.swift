@@ -2,11 +2,13 @@
 //  AppDelegate.swift
 //  Todo
 //
-//  Created by Ferrakkem Bhuiyan on 2020-09-03.
+//  Created by Ferrakkem Bhuiyan on 2020-09-07.
 //  Copyright © 2020 Ferrakkem Bhuiyan. All rights reserved.
 //
 
 import UIKit
+import RealmSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //Get Realm file configuration URL
+        //print(Realm.Configuration.defaultConfiguration.fileURL)
+            
         return true
     }
 

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eae-g2-vG7">
+                                <rect key="frame" x="20" y="68" width="374" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="y6v-EO-abB"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Complete"/>
+                                    <segment title="Incomplete"/>
+                                </segments>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="segmentPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="ej7-Ai-bC4"/>
+                                </connections>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" placeholder="Search your todo item" translatesAutoresizingMaskIntoConstraints="NO" id="d66-fe-2GF">
+                                <rect key="frame" x="0.0" y="108" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ebv-d8-ziU"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Qe0-fq-E7H"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fX6-kx-1Ka">
+                                <rect key="frame" x="0.0" y="148" width="414" height="684"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="2WP-4g-Dd3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bGx-sC-wHV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fX6-kx-1Ka" secondAttribute="bottom" constant="30" id="7zT-Lk-ZTS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eae-g2-vG7" secondAttribute="trailing" constant="20" id="DFh-NR-6e7"/>
+                            <constraint firstItem="fX6-kx-1Ka" firstAttribute="top" secondItem="d66-fe-2GF" secondAttribute="bottom" id="Iv3-M2-bbg"/>
+                            <constraint firstItem="d66-fe-2GF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="O2X-Up-tCV"/>
+                            <constraint firstItem="fX6-kx-1Ka" firstAttribute="leading" secondItem="d66-fe-2GF" secondAttribute="leading" id="QQ7-Sg-vCm"/>
+                            <constraint firstItem="d66-fe-2GF" firstAttribute="top" secondItem="eae-g2-vG7" secondAttribute="bottom" id="QXw-6a-Q3S"/>
+                            <constraint firstItem="fX6-kx-1Ka" firstAttribute="trailing" secondItem="d66-fe-2GF" secondAttribute="trailing" id="VsL-77-Lwc"/>
+                            <constraint firstItem="eae-g2-vG7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="oX2-OX-gVs"/>
+                            <constraint firstItem="d66-fe-2GF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q7f-3x-5Gu"/>
+                            <constraint firstItem="eae-g2-vG7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="xJz-GE-KDK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="todoListTable" destination="fX6-kx-1Ka" id="HuU-yW-gHf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="63.616071428571423"/>
+        </scene>
+    </scenes>
+</document>
